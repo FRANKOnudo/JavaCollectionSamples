@@ -25,6 +25,16 @@ public class MyIntArray {
     }
     v[len++] = newValue;
   }
+  public void addHead( int newValue ) {
+    if (len>=size) {
+      // il nostro array è sold-out
+      int[] nuovoV = new int[size + delta];
+      for (int i=0; i<len; i++) nuovoV[i]=v[i];
+      v = nuovoV;
+      size += delta;
+    }
+    v[len++] = newValue;
+  }
 
     @Override
     public String toString() {
